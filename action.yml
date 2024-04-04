@@ -17,6 +17,8 @@ runs:
 
     - name: Ensure CI User Variables are populated
       shell: bash
+      env:
+        GRUNTWORK_CODE_ACCESS_TOKEN: ${{ secrets.GRUNTWORK_CODE_ACCESS_TOKEN }}
       run: |
         if [[ -z "$GRUNTWORK_CODE_ACCESS_TOKEN" ]]; then echo "Missing GRUNTWORK_CODE_ACCESS_TOKEN"; exit 1; fi
     # See https://stackoverflow.com/a/76151412
