@@ -9,7 +9,7 @@ runs:
   using: composite
   steps:
     - name: Update comment
-      uses: gruntwork-io/pipelines-status-update@v0.1.0
+      uses: gruntwork-io/pipelines-status-update@main
       with:
         step_name: "Preflight Checks"
         step_status: "in_progress"
@@ -40,7 +40,7 @@ runs:
           exit 1
         fi
     - name: Update comment
-      uses: gruntwork-io/pipelines-status-update@v0.1.0
+      uses: gruntwork-io/pipelines-status-update@main
       with:
         step_name: "Preflight Checks"
         step_status: "success"
