@@ -11,8 +11,6 @@ runs:
     - name: Update comment
       uses: gruntwork-io/pipelines-status-update@main
       with:
-        step_name: "Preflight Checks"
-        step_status: "in_progress"
         first_update: "true"
 
     - name: Ensure CI User Variables are populated
@@ -41,8 +39,9 @@ runs:
         fi
     - name: Update comment
       uses: gruntwork-io/pipelines-status-update@main
+      if: ${{ failure() }}
       with:
         step_name: "Preflight Checks"
-        step_status: "success"
+        step_status: "failure"
         step_details_preview: 'Preflight Results'
-        step_details: "Validated envvars and git branch status"
+        step_details: "There was an issue with the preflight checks. Please check the logs for detailed output."
