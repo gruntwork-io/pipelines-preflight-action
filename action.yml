@@ -12,6 +12,7 @@ runs:
       uses: gruntwork-io/pipelines-status-update@main
       with:
         first_update: "true"
+        summary_status: "🔄 Running preflight checks..."
 
     - name: Ensure CI User Variables are populated
       shell: bash
