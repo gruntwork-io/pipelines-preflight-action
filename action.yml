@@ -14,6 +14,13 @@ runs:
         first_update: "true"
         summary_status: "🔄 Running preflight checks..."
 
+    - name: Hide any previous comment
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        header: ${{ github.event.before }}
+        hide: true
+        hide_classify: OUTDATED
+
     - name: Ensure CI User Variables are populated
       shell: bash
       env:
@@ -38,6 +45,7 @@ runs:
           echo "::error::Branch is not up to date with main"
           exit 1
         fi
+
     - name: Update comment
       uses: gruntwork-io/pipelines-status-update@main
       if: ${{ failure() }}
