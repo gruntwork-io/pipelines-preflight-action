@@ -53,6 +53,6 @@ runs:
       if: ${{ failure() }}
       with:
         step_name: "Preflight Checks"
-        step_status: "failure"
+        step_status: "failed"
         step_details_preview: 'Preflight Results'
         step_details: "There was an issue with the preflight checks. Please check the logs for detailed output."
