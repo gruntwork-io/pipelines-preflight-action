@@ -20,6 +20,8 @@ runs:
         header: ${{ github.event.before }}
         hide: true
         hide_classify: OUTDATED
+        append: true
+        body: ""
 
     - name: Ensure CI User Variables are populated
       shell: bash
