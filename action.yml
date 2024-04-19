@@ -21,7 +21,7 @@ runs:
         hide: true
         hide_classify: OUTDATED
         append: true
-        message: ""
+        message: "Replaced by newer plan"
 
     - name: Ensure CI User Variables are populated
       shell: bash
