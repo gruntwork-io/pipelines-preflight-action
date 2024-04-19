@@ -21,7 +21,7 @@ runs:
         hide: true
         hide_classify: OUTDATED
         append: true
-        body: ""
+        message: ""
 
     - name: Ensure CI User Variables are populated
       shell: bash
