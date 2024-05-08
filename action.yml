@@ -9,7 +9,7 @@ runs:
   using: composite
   steps:
     - name: Update comment
-      uses: gruntwork-io/pipelines-status-update@v0.2.1
+      uses: gruntwork-io/pipelines-status-update@lewis
       with:
         first_update: "true"
         summary_status: "🔄 Running preflight checks..."
@@ -47,7 +47,7 @@ runs:
         fi
 
     - name: Update comment
-      uses: gruntwork-io/pipelines-status-update@v0.2.1
+      uses: gruntwork-io/pipelines-status-update@lewis
       if: ${{ failure() }}
       with:
         step_name: "Preflight Checks"
